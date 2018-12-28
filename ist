@@ -1,0 +1,30 @@
+#!/bin/python3
+import os
+import urllib.parse
+
+import getch
+
+print("(g)oogle (w)ikipedia (s)earx")
+letter = getch.getch()
+
+if letter == "g":
+    print("google: ", end="")
+elif letter == "w":
+    print("wikipedia: ", end="")
+elif letter == "s":
+    print("searx: ", end="")
+
+search = input()
+search_safe = urllib.parse.quote_plus(search)
+
+url = ""
+
+if letter == "g":
+    url = "https://www.google.com/search?q=" + search_safe
+elif letter == "w":
+    search_safe = urllib.parse.quote(search)
+    url = "https://en.wikipedia.org/wiki/Special:Search/" + search_safe
+elif letter == "s":
+    url = "https://searx.info/?q=" + search_safe
+
+os.system("firefox " + url + " --new-window --class=floating_firefox")
