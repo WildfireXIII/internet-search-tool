@@ -1,0 +1,3 @@
+install=ist>$BIN_DIR
+remove=ist<$BIN_DIF
+data=NONE
