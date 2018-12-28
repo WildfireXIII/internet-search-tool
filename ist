@@ -27,4 +27,4 @@ elif letter == "w":
 elif letter == "s":
     url = "https://searx.info/?q=" + search_safe
 
-os.system("firefox " + url + " --new-window --class=floating_firefox")
+os.system("firefox --new-window " + url + " --class=floating_firefox")
